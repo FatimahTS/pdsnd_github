@@ -20,7 +20,7 @@ def get_filters():
     while True:
         city = input("\nWhich city would you like to filter by? New York City, Chicago, or Washington?\n").lower()
         if city not in ('new york city', 'chicago', 'washington'):
-            print("Sorry, I didn't catch that. Try again.")
+            print("Invalid input. Please enter a valid city name: 'New York City', 'Chicago', or 'Washington'.")
             continue
         else:
             break
@@ -39,7 +39,7 @@ def get_filters():
         day = input(
             "\nAre you looking for a particular day? If so, kindly enter the day as follows: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, or type 'all' if you do not have any preference.\n").lower()
         if day not in ('sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'all'):
-            print("Sorry, I didn't catch that. Try again.")
+            print("Invalid input. Please enter a valid day name")
             continue
         else:
             break
