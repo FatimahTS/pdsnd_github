@@ -20,7 +20,7 @@ def get_filters():
     while True:
         city = input("\nWhich city would you like to filter by? New York City, Chicago, or Washington?\n").lower()
         if city not in ('new york city', 'chicago', 'washington'):
-            print("Sorry, I didn't catch that. Try again.")
+            print("Invalid input. Please enter a valid city name: 'New York City', 'Chicago', or 'Washington'.")
             continue
         else:
             break
@@ -39,7 +39,7 @@ def get_filters():
         day = input(
             "\nAre you looking for a particular day? If so, kindly enter the day as follows: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, or type 'all' if you do not have any preference.\n").lower()
         if day not in ('sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'all'):
-            print("Sorry, I didn't catch that. Try again.")
+            print("Invalid input. Please enter a valid day name")
             continue
         else:
             break
@@ -100,13 +100,13 @@ def station_stats(df):
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
 
-    Start_Station = df['Start Station'].value_counts().idxmax()
+    start_station = df['Start Station'].value_counts().idxmax()
     print('Most Commonly used start station:', Start_Station)
 
     End_Station = df['End Station'].value_counts().idxmax()
     print('\nMost Commonly used end station:', End_Station)
 
-    Combination_Station = df.groupby(['Start Station', 'End Station']).count()
+    combination_station = df.groupby(['Start Station', 'End Station']).count()
     print('\nMost Commonly used combination of start station and end station trip:', Start_Station, " & ", End_Station)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
